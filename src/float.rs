@@ -32,6 +32,6 @@ pub fn to_parts(n: f32) -> (u32, u32, u32) {
     (sign, exponent, fraction)
 }
 
-fn from_parts(sign: f32, exponent: f32, mantissa: f32) -> f32 {
+pub fn from_parts(sign: f32, exponent: f32, mantissa: f32) -> f32 {
     sign * exponent * mantissa
 }
