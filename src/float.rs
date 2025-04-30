@@ -21,3 +21,17 @@ pub fn decode(sign: u32, exponent: u32, fraction: u32) -> (f32, f32, f32) {
 
     (signed_1, exponent, mantissa)
 }
+
+pub fn to_parts(n: f32) -> (u32, u32, u32) {
+    let bits = n.to_bits();
+
+    let sign = (bits >> 31) & 1;
+    let exponent = (bits >> 23) & 0xff;
+    let fraction = bits & 0x7fffff;
+
+    (sign, exponent, fraction)
+}
+
+fn from_parts(sign: f32, exponent: f32, mantissa: f32) -> f32 {
+    sign * exponent * mantissa
+}
