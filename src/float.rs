@@ -1,5 +1,5 @@
-const BIAS: i32 = 127; // <1>
-const RADIX: f32 = 2.0; // <1>
+const BIAS: i32 = 127;
+const RADIX: f32 = 2.0;
 
 pub fn decode(sign: u32, exponent: u32, fraction: u32) -> (f32, f32, f32) {
     let signed_1 = (-1.0_f32).powf(sign as f32);
